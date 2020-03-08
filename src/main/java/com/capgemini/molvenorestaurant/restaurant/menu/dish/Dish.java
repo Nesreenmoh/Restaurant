@@ -1,6 +1,7 @@
 package com.capgemini.molvenorestaurant.restaurant.menu.dish;
 
 import com.capgemini.molvenorestaurant.restaurant.menu.category.Category;
+import com.capgemini.molvenorestaurant.restaurant.menu.resorder.ResOrder;
 
 
 import javax.persistence.*;
@@ -24,6 +25,8 @@ public class Dish {
 
     @ManyToOne
     private Category category;
+
+
 
     // constructors
     public Dish() {
@@ -94,4 +97,6 @@ public class Dish {
     public void setSize(String size) {
         this.size = size;
     }
+
+
 }

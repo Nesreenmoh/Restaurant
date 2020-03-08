@@ -1,4 +1,4 @@
-package com.capgemini.molvenorestaurant.restaurant.menu.order;
+package com.capgemini.molvenorestaurant.restaurant.menu.resorder;
 
 
 
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Order {
+public class ResOrder {
 
     //fields
    @Id
@@ -18,17 +18,20 @@ public class Order {
     private Long id;
     private LocalDate date;
 
+
     @OneToMany
     @JoinColumn(name="DISH_ID")
     private List<Dish> dishes = new ArrayList<>();
 
+
     // constructor
-    public Order() {
+    public ResOrder() {
     }
 
-    public Order(Long id, LocalDate date) {
+    public ResOrder(Long id, LocalDate date, List<Dish> dishes) {
         this.id = id;
         this.date = date;
+        this.dishes = dishes;
     }
 
     public Long getId() {

@@ -1,10 +1,12 @@
-package com.capgemini.molvenorestaurant.restaurant.menu.order;
+package com.capgemini.molvenorestaurant.restaurant.menu.resorder;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Transactional
 @Service
 public class OrderService {
 
@@ -13,21 +15,21 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
-    public List<Order> getAllOrders() {
+    public List<ResOrder> getAllOrders() {
        return orderRepository.findAll();
     }
 
-    public Order getOneOrder(Long id){
+    public ResOrder getOneOrder(Long id){
         return orderRepository.findOneById(id);
     }
 
-    public void addOrder(Order order) {
-        orderRepository.save(order);
+    public void addOrder(ResOrder resOrder) {
+        orderRepository.save(resOrder);
     }
 
 
-    public void updateOrder(Order order) {
-      orderRepository.save(order);
+    public void updateOrder(ResOrder resOrder) {
+      orderRepository.save(resOrder);
     }
 
     public void deleteOrder(Long id) {

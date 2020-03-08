@@ -1,4 +1,4 @@
-package com.capgemini.molvenorestaurant.restaurant.menu.order;
+package com.capgemini.molvenorestaurant.restaurant.menu.resorder;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,18 +13,18 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping
-    public List<Order> getAllOrders(){
+    public List<ResOrder> getAllOrders(){
        return orderService.getAllOrders();
     }
 
     @GetMapping("/{id}")
-    public Order getOneOrder(@PathVariable Long id){
+    public ResOrder getOneOrder(@PathVariable Long id){
          return orderService.getOneOrder(id);
     }
 
     @PostMapping
-    public void addOrder(@RequestBody Order order) {
-        orderService.addOrder(order);
+    public void addOrder(@RequestBody ResOrder resOrder) {
+        orderService.addOrder(resOrder);
     }
 
     @DeleteMapping("/{id}")
@@ -33,7 +33,7 @@ public class OrderController {
     }
 
     @PutMapping("/{id}")
-    public void updateOrder(@RequestBody Order order) {
-        orderService.updateOrder(order);
+    public void updateOrder(@RequestBody ResOrder resOrder) {
+        orderService.updateOrder(resOrder);
     }
 }
