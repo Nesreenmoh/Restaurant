@@ -2,10 +2,8 @@ package com.capgemini.molvenorestaurant.restaurant.menu.dish;
 
 import com.capgemini.molvenorestaurant.restaurant.menu.category.Category;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -14,6 +12,7 @@ public class Dish {
     // fields
     @Id
     @GeneratedValue
+    @Column(name="DISH_ID")
     private Long id;
     @NotNull
     private String name;
