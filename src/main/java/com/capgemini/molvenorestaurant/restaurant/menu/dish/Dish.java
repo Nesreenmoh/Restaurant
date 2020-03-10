@@ -13,7 +13,6 @@ public class Dish {
     // fields
     @Id
     @GeneratedValue
-    @Column(name="DISH_ID")
     private Long id;
     @NotNull
     private String name;

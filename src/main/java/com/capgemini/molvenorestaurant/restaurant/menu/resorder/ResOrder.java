@@ -17,21 +17,31 @@ public class ResOrder {
    @GeneratedValue
     private Long id;
     private LocalDate date;
+    private Double total;
 
 
-    @OneToMany
-    @JoinColumn(name="DISH_ID")
-    private List<Dish> dishes = new ArrayList<>();
+//    @OneToMany
+//    @JoinColumn(name="DISH_ID")
+//    private List<Dish> dishes = new ArrayList<>();
 
 
     // constructor
     public ResOrder() {
     }
 
-    public ResOrder(Long id, LocalDate date, List<Dish> dishes) {
+    public ResOrder(Long id, LocalDate date, Double total) {
         this.id = id;
         this.date = date;
-        this.dishes = dishes;
+        this.total = total;
+
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
     }
 
     public Long getId() {
@@ -50,11 +60,4 @@ public class ResOrder {
         this.date = date;
     }
 
-    public List<Dish> getDishes() {
-        return dishes;
-    }
-
-    public void setDishes(List<Dish> dishes) {
-        this.dishes = dishes;
-    }
 }

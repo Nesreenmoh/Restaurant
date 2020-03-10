@@ -319,12 +319,14 @@ function showAlert(msg, myclass) {
   if (myclass === 'error') {
     $('.modal-title').html('');
     $('.modal-title').html('Error');
+    $('.modal-header').css('background-color', 'red');
     $('#error').show();
     $('#message').text('');
     $('#message').append(msg);
   } else {
     $('.modal-title').html('');
     $('.modal-title').html('Success');
+    $('.modal-header').css('background-color', 'green');
     $('#message').text('');
     $('#message').append(msg);
     $('#error').show();

@@ -203,6 +203,7 @@ function myAlert(msg, className) {
   if (className === 'error') {
     $('.modal-title').html('');
     $('.modal-title').html('Error');
+    $('.modal-header').css('background-color', 'red');
     const div = document.createElement('div');
     div.className = `alert ${className}`;
     div.appendChild(document.createTextNode(msg));
@@ -212,7 +213,7 @@ function myAlert(msg, className) {
   } else {
     $('.modal-title').html('');
     $('.modal-title').html('Success');
-    $('.modal-title').css('background-color', '#008cba');
+    $('.modal-header').css('background-color', 'green');
     const div = document.createElement('div');
     div.className = `alert ${className}`;
     div.appendChild(document.createTextNode(msg));
